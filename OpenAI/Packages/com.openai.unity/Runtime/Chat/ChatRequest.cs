@@ -218,19 +218,19 @@ namespace OpenAI.Chat
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse.
         /// </summary>
         [JsonProperty("user")]
-        public string User;
+        public string User { get; }
 
         /// <summary>
         /// If functions is not null or empty, this is required.  Pass "auto" to let the API decide, "none" if none are to be called, or {"name": "function-name"}
         /// </summary>
         [JsonProperty("function_call")]
-        public string FunctionCall;
+        public string FunctionCall { get; }
 
         /// <summary>
         /// An optional list of functions to get arguments for.
         /// </summary>
         [JsonProperty("functions")]
-        public IReadOnlyList<Function> Functions;
+        public IReadOnlyList<Function> Functions { get; }
 
         /// <inheritdoc />
         public override string ToString() => JsonConvert.SerializeObject(this);
